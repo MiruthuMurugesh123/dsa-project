@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int choice, qty, total = 0;
+    char more;
+    
+    printf("--- Food Delivery Menu ---\n");
+    printf("1. Chicken Biryani - Rs.200\n");
+    printf("2. Veg Pizza - Rs.250\n");
+    printf("3. Burger - Rs.100\n");
+    printf("4. Coke - Rs.50\n");
+
+    do {
+        printf("\nEnter food number: ");
+        scanf("%d", &choice);
+        printf("Enter quantity: ");
+        scanf("%d", &qty);
+
+        if(choice == 1) total += 200 * qty;
+        else if(choice == 2) total += 250 * qty;
+        else if(choice == 3) total += 100 * qty;
+        else if(choice == 4) total += 50 * qty;
+        else printf("Invalid choice!\n");
+
+        printf("Add more? (y/n): ");
+        scanf(" %c", &more);
+    } while(more == 'y' || more == 'Y');
+
+    printf("\n-----------------------\n");
+    printf("Total Bill Amount: Rs.%d\n", total);
+    printf("Order Placed Successfully!\n");
+    return 0;
+}
